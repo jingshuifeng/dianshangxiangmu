@@ -1,0 +1,75 @@
+#main {
+  display: flex;
+  justify-content: center;
+}
+#main .left {
+  width: 200px;
+  height: 100vh;
+  background-color: skyblue;
+}
+#main .left .head {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#main .left .head img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  box-shadow: 0 0 10px 0 hotpink;
+}
+#main .left .head p {
+  margin-top: 10px;
+}
+#main .left .list-group a {
+  background-color: transparent;
+  border-color: transparent;
+}
+#main .left .list-group a.active,
+#main .left .list-group a:hover {
+  background-color: hotpink;
+  color: #fff !important;
+}
+#main .left .list-group a .collapse a {
+  background-color: transparent;
+  border: none;
+}
+#main .right {
+  flex: 1;
+  height: 100vh;
+}
+#main .right #header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main .right #header .glyphicon {
+  vertical-align: middle;
+  text-decoration: none;
+  padding: 5px;
+}
+#main .right #header .glyphicon::before {
+  font-size: 20px;
+  margin-right: 6px;
+}
+#main .right #info {
+  padding: 10px;
+}
+#main .right #info thead tr th {
+  text-align: center;
+}
+#main .right #info tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+}
+#main .right #info tbody tr th {
+  text-align: center;
+  vertical-align: middle;
+}
+#info {
+  background-color: #eee;
+}

@@ -1,0 +1,92 @@
+#main {
+    display        : flex;
+    justify-content: center;
+
+    .left {
+        width           : 200px;
+        height          : 100vh;
+        background-color: skyblue;
+
+        .head {
+            height         : 250px;
+            display        : flex;
+            flex-direction : column;
+            align-items    : center;
+            justify-content: center;
+
+            img {
+                width        : 120px;
+                height       : 120px;
+                border-radius: 50%;
+                border       : 10px solid #fff;
+                box-shadow   : 0 0 10px 0 hotpink;
+            }
+
+            p {
+                margin-top: 10px;
+            }
+        }
+
+        .list-group {
+            a{
+                background-color: transparent;
+                border-color    : transparent;
+
+                &.active,
+                &:hover {
+                    background-color: hotpink;
+                    color           : #fff !important;
+                }
+                .collapse {
+                    a {
+                        background-color: transparent;
+                        border          : none;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .right {
+        flex  : 1;
+        height: 100vh;
+        #header{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .glyphicon{
+                vertical-align: middle;
+                text-decoration: none;
+                padding: 5px;
+            }
+            .glyphicon::before{
+                font-size: 20px;
+                margin-right: 6px;
+            }
+        }
+        #info{
+            padding: 10px;
+            thead{
+                tr{
+                    th{
+                        text-align: center;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    th{
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}

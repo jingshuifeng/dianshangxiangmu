@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./less/index.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+
+</head>
+
+<body>
+    <section id="main">
+        <div class="left">
+            <div class="head">
+                <img src="./images/1.png" alt="">
+                <p>小姐姐</p>
+            </div>
+            <div class="list-group">
+                <a href="index.html" class="list-group-item active ">
+                    用户管理
+                </a>
+                <!-- 给你要点击的a添加 这2个属性 注意a本身有一个href删掉之前href -->
+                <!-- href="#collapseExample" 关联要切换的内容id选择器 -->
+                <a class="list-group-item " data-toggle="collapse" href="#collapseExample">分类管理</a>
+                <!-- 不能把内容包裹在a标签里面 因为a不能包含a -->
+                <!-- collapse控制显示隐藏   collapse表示隐藏  collapse in 表示显示 -->
+                <div class="collapse" id="collapseExample">
+                    <div class="list-group">
+                        <a href="firstCategory.html" class="list-group-item ">
+                            一级分类
+                        </a>
+                        <a href="secondCategory.html" class="list-group-item ">
+                            二级分类
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="list-group-item">商品管理</a>
+            </div>
+        </div>
+        <div class="right">
+            <header id="header">
+                <a href="#" class="glyphicon glyphicon-th-list"></a>
+                <a href="#" class="glyphicon glyphicon-off exit">退出</a>
+            </header>
+            <section id="info">
+                <table class="table table-hover table-bordered table-striped text-center">
+                    <thead>
+                        <tr class="text-center">
+                            <th>id</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id='user-tbody'>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>itcast</td>
+                            <td>11333333</td>
+                            <td>已启用</td>
+                            <td><button type="button" class="btn btn-danger">禁用</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+             <!-- 分页按钮 -->
+             <ul id="page"></ul>
+        </div>
+    </section>
+</body>
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
+<script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+
+<script id='tpl' type="text/html">
+    {{each rows value}}
+    <tr>
+        <th scope="row">{{value.id}}</th>
+        <td>{{value.username}}</td>
+        <td>{{value.mobile}}</td>
+        {{if value.isDelete==1}}
+        <td>已启用</td>
+        <td><button type="button" class="btn btn-danger"data-id="{{value.id}}" data-status="{{value.isDelete}}">禁用</button></td>
+        {{else}}
+        <td>已禁用</td>
+        <td><button type="button" class="btn btn-primary"data-id="{{value.id}}"data-status="{{value.isDelete}}">启用</button></td>
+        {{/if}}
+    </tr>
+    {{/each}}
+</script>
+
+</html>
