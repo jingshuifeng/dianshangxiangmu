@@ -1,0 +1,48 @@
+// 引入base.less 公共样式文件
+@import 'base.less';
+
+/* 分类的主体样式 */
+#main {
+	display         : flex;
+	background-color: #ccc;
+
+	.category-left {
+		position: relative;
+		width   : .8rem;
+
+		ul {
+			li {
+				&.active {
+					a {
+						background-color: #ccc;
+					}
+				}
+			}
+		}
+	}
+
+	.category-right {
+		position: relative;
+		flex    : 1;
+
+		a {
+			margin-top: 20px;
+			display        : flex;
+			justify-content: center;
+			align-items    : center;
+			flex-direction : column;
+			p{
+				margin-top: 10px;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.mui-scroll {
+		min-height: 100.1%;
+	}
+}
+
+.mui-table-view-cell:after {
+	margin-left: -50px;
+}

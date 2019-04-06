@@ -1,0 +1,76 @@
+@import 'base.less';
+
+#main {
+    overflow: hidden;
+    position: relative;
+    .mui-slider {
+        position: relative;
+
+        .mui-slider-dian {
+            position : absolute;
+            bottom   : 20px;
+            left     : 50%;
+            transform: translateX(-50%);
+
+            li {
+                float           : left;
+                display         : block;
+                height          : 20px;
+                width           : 20px;
+                border-radius   : 50%;
+                background-color: red;
+                margin         : 0 20px;
+            }
+        }
+    }
+
+}
+#nav{
+    padding: 0.1rem;
+    a{
+        display: block;
+        img{
+        width: 100%;
+    }
+    }
+    
+}
+#banner{
+    margin-top: 0.1rem;
+    padding: 0 0.1rem;
+    .left{
+        
+        img{
+            float: left;
+            width: 50%;
+            height: 1.2rem;
+        }
+    }
+    .right{
+        img{
+        width: 100%;
+        height: 2.4rem;
+    }
+    }
+    
+}
+#brand{
+    padding: 0.1rem;
+    img{
+        width: 100%;
+    }
+}
+#sport,#women,#man{
+    padding: 0 0.1rem;
+    text-align: center;
+    img{
+        width: 100%;
+    }
+    p{
+        margin-top: 10px;
+    }
+    button{
+        background-color: #007aff;
+        color: #fff;
+    }
+}

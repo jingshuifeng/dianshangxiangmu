@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./less/category.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+</head>
+
+<body>
+    <!-- 主页的头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <form action="">
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
+        </div>
+        <div class="right">
+            <a class="fa fa-search" aria-hidden="true"href="search.html"></a>
+        </div>
+    </header>
+    <section id="main">
+       <div class="category-left">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <ul class="mui-table-view">
+                    
+                </ul>
+            </div>
+        </div>
+       </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-row">
+                        <!-- <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="./images/brand1.png"></img>
+                                <p>耐克</p>
+                            </a>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 公共的底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script type="text/html"id="left-tpl">
+    {{if rows.length>0 }}
+    {{each rows}}
+        {{if $value.id==1}}
+        <li class="mui-table-view-cell active"><a href="javascript:qiehuan({{$value.id}})">
+            {{$value.categoryName}}</a></li>
+        {{else}}
+        <li class="mui-table-view-cell"><a href="javascript:qiehuan({{$value.id}})">
+            {{$value.categoryName}}</a></li>
+        {{/if}}
+    {{/each}}
+    {{else}}
+    <li>这个分类没有东西</li>
+    {{/if}}
+</script>
+<script type="text/html" id="right-tpl">
+    {{each rows value}}
+    <div class="mui-col-xs-4">
+        <a href="#">
+            <img src={{value.brandLogo}}>
+            <p>{{value.brandName}}</p>
+        </a>
+    </div>
+    {{/each}}
+</script>
+<script>
+mui('.mui-scroll-wrapper').scroll({
+	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
+$.ajax({
+    url:'/category/queryTopCategory',
+    success:function(obj){
+        console.log(obj);
+        var html=template('left-tpl',obj);
+        $('.mui-table-view').html(html);
+        $('.mui-table-view ').on('tap','li',function (){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    }
+})
+
+function qiehuan(ids){
+    $.ajax({
+    url:'/category/querySecondCategory',
+    data:{id:ids},
+    success:function(obj){
+        var html=template('right-tpl',obj);
+        $('.category-right .mui-row').html(html);
+    }
+})
+}
+qiehuan(1);
+</script>
+</html>

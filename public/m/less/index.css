@@ -1,0 +1,164 @@
+/* 定义一个公共主体颜色变量 */
+body {
+  /* Mui默认是17px */
+  font-size: .14rem;
+}
+/* 设置我们的html根元素来实现rem适配 */
+html {
+  font-size: 26.66667vw;
+}
+/* 去掉默认的间距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-size: 0.14rem;
+  line-height: 0.14rem;
+}
+#header {
+  height: 0.45rem;
+  background-color: #006699;
+  display: flex;
+}
+#header .left {
+  width: 0.45rem;
+  height: 0.45rem;
+}
+#header .center {
+  flex: 1;
+}
+#header .center h4 {
+  color: #fff;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#header .right {
+  width: 0.45rem;
+  height: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#header .right a {
+  color: #fff;
+}
+#main {
+  flex: 1;
+}
+#footer {
+  height: 0.45rem;
+  background-color: #006699;
+}
+#footer .mui-row {
+  height: 100%;
+}
+#footer .mui-row > div {
+  height: 100%;
+}
+#footer .mui-row > div a {
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#footer .mui-row > div a i {
+  display: block;
+}
+#footer .mui-row > div a span {
+  display: block;
+}
+#main {
+  overflow: hidden;
+  position: relative;
+}
+#main .mui-slider {
+  position: relative;
+}
+#main .mui-slider .mui-slider-dian {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .mui-slider .mui-slider-dian li {
+  float: left;
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0 20px;
+}
+#nav {
+  padding: 0.1rem;
+}
+#nav a {
+  display: block;
+}
+#nav a img {
+  width: 100%;
+}
+#banner {
+  margin-top: 0.1rem;
+  padding: 0 0.1rem;
+}
+#banner .left img {
+  float: left;
+  width: 50%;
+  height: 1.2rem;
+}
+#banner .right img {
+  width: 100%;
+  height: 2.4rem;
+}
+#brand {
+  padding: 0.1rem;
+}
+#brand img {
+  width: 100%;
+}
+#sport,
+#women,
+#man {
+  padding: 0 0.1rem;
+  text-align: center;
+}
+#sport img,
+#women img,
+#man img {
+  width: 100%;
+}
+#sport p,
+#women p,
+#man p {
+  margin-top: 10px;
+}
+#sport button,
+#women button,
+#man button {
+  background-color: #007aff;
+  color: #fff;
+}
