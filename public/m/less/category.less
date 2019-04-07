@@ -5,11 +5,11 @@
 #main {
 	display         : flex;
 	background-color: #ccc;
-
+	flex-direction: initial;
 	.category-left {
 		position: relative;
 		width   : .8rem;
-
+		height: 100%;
 		ul {
 			li {
 				&.active {
@@ -24,9 +24,11 @@
 	.category-right {
 		position: relative;
 		flex    : 1;
+		height: 700px;
 
 		a {
-			margin-top: 20px;
+			margin-top: 10px;
+			background-color: yellow;
 			display        : flex;
 			justify-content: center;
 			align-items    : center;
@@ -34,6 +36,9 @@
 			p{
 				margin-top: 10px;
 				overflow: hidden;
+			}
+			img{
+				width: 100%;
 			}
 		}
 	}

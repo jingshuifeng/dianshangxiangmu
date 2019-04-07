@@ -147,43 +147,51 @@ body {
 #footer .mui-row > div a span {
   display: block;
 }
-/* 分类的主体样式 */
 #main {
-  display: flex;
-  background-color: #ccc;
-  flex-direction: initial;
-}
-#main .category-left {
   position: relative;
-  width: .8rem;
-  height: 100%;
 }
-#main .category-left ul li.active a {
-  background-color: #ccc;
+#main .mui-card-header {
+  color: #aaa;
 }
-#main .category-right {
-  position: relative;
-  flex: 1;
-  height: 700px;
+#main .mui-card-header > a {
+  font-size: 0.14rem;
+  color: #666;
 }
-#main .category-right a {
-  margin-top: 10px;
-  background-color: yellow;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+#main .mui-card-header > a.active {
+  color: red;
 }
-#main .category-right a p {
-  margin-top: 10px;
-  overflow: hidden;
+#main .product {
+  padding: 0.05rem;
+  border: 1px solid #ccc;
+  text-align: center;
 }
-#main .category-right a img {
+#main .product .product-img {
   width: 100%;
 }
-#main .mui-scroll {
-  min-height: 100.1%;
+#main .product .product-name {
+  color: #ccc;
+  text-align: left;
+  margin-top: 0.05rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-.mui-table-view-cell:after {
-  margin-left: -50px;
+#main .product .product-price {
+  text-align: center;
+}
+#main .product .product-price span {
+  color: red;
+}
+#main .mui-scroll {
+  display: flex;
+  flex-direction: column;
+}
+#main .mui-scroll form {
+  height: 68px;
+}
+#main .mui-scroll .mui-pull-bottom-pocket {
+  position: absolute;
 }

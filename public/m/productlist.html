@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./less/product.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+</head>
+
+<body>
+    <!-- 主页的头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>商品列表</h4>
+        </div>
+        <div class="right">
+
+        </div>
+    </header>
+    <section id="main">
+        <div class="mui-content mui-scroll-wrapper" id="pullrefresh" >
+            <div class="mui-scroll">
+                <form action="#">
+                    <input type="search" class="input-search" placeholder="请输入要搜索的商品">
+                    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined btn-search">搜索</button>
+                </form>
+                <div class="mui-card search-history">
+                    <!--页眉，放置标题-->
+                    <div class="mui-card-header">
+                        <a href="#" data-type="time" data-sort="1" class="active">上架时间<i
+                                class="fa fa-angle-down"></i></a>
+                        <a href="#" data-type="price" data-sort="1">价格<i class="fa fa-angle-down"></i></a>
+                        <a href="#" data-type="num" data-sort="1">销量<i class="fa fa-angle-down"></i></a>
+                        <a href="#" data-type="zhekou" data-sort="1">折扣<i class="fa fa-angle-down"></i></a>
+                    </div>
+                    
+                            <!--内容区-->
+                            <div class="mui-card-content product-list">
+                                <div class="mui-row">
+                                    <div class="mui-col-xs-6">
+                                        <div class="product">
+                                            <img src="./images/active1.png" alt="" class="product-img">
+                                            <p class="product-name">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                            <p class="product-price">
+                                                <span>￥499.1</span>
+                                                <del>￥888.1</del>
+                                            </p>
+                                            <button type="button" class="mui-btn mui-btn-primary product-buy"
+                                                data-id="2">立即购买</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- 公共的底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/product.js"></script>
+<script id="tpl" type="text/html">
+    {{each data value }}
+    <div class="mui-col-xs-6">
+    <div class="product">
+        <img src={{value.pic[0].picAddr}} alt="" class="product-img">
+        <p class="product-name">{{value.proName}}</p>
+        <p class="product-price">
+            <span>￥{{value.price}}</span>
+            <del>￥{{value.oldPrice}}</del>
+        </p>
+        <button type="button" class="mui-btn mui-btn-primary product-buy" data-id="2">立即购买{{value.num}}</button>
+    </div>
+  
+</div>  {{/each}}
+</script>
+
+</html>

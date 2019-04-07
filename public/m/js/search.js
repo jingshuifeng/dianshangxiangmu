@@ -1,6 +1,11 @@
 
 
 $(function () {
+    $('html').on('keydown',function (e){
+        if(e.keyCode=='13'){
+            $('.btn-search').on('tap', function () {})();
+        }
+    })
     addHistory();
     queryHistory();
     deleteHistory();
@@ -15,13 +20,7 @@ $(function () {
             var search = $('.input-search').val().trim();
             if (search != "") {
                 //从浏览器取得数据arr判断search是否在里面
-                var str = localStorage.getItem('history');
-
-                if (str != null) {
-                    arr = JSON.parse(str);
-                } else {
-                    arr = [];
-                }
+                var arr=getarr();
                 for (var i = 0; i < arr.length; i++) {
                     if (arr[i] == search) {
                         arr.splice(i, 1);
@@ -29,34 +28,24 @@ $(function () {
                     }
                 }
                 arr.unshift(search);
-                var str = JSON.stringify(arr);
-                localStorage.setItem('history', str);
+                setarr(arr);
                 $('.input-search').val("");
                 queryHistory();
+                location='productlist.html?search='+search;
             }
         })
 
     }
     //查询结果的函数
     function queryHistory() {
-        var arr = localStorage.getItem('history');
-        if (arr == null) {
-            arr = [];
-        } else {
-            arr = JSON.parse(arr);
-        }
+        var arr=getarr();
         var html = template('historyTpl', { rows: arr });
         $('.search-history ul').html(html);
     }
     //单个XX删除的函数
     function deleteHistory() {
         $('.search-history ul').on('tap', 'span', function () {
-            var arr = localStorage.getItem('history');
-            if (arr == null) {
-                arr = [];
-            } else {
-                arr = JSON.parse(arr);
-            }
+            var arr=getarr();
             var tet = $(this).parent().text().trim();
             console.log(arr,tet);
 
@@ -66,8 +55,7 @@ $(function () {
                     i--;
                 }
             }
-            arr = JSON.stringify(arr);
-            localStorage.setItem('history', arr);
+            setarr(arr);
             queryHistory();
         })
 
@@ -79,5 +67,20 @@ $(function () {
             queryHistory();
 
         })
+    }
+    //封装获取本地数据的函数
+    function getarr(){
+        var arr = localStorage.getItem('history');
+        if (arr == null) {
+            arr = [];
+        } else {
+            arr = JSON.parse(arr);
+        }
+        return arr;
+    }
+    //封装设置本地数据的函数
+    function setarr(arr){
+        arr = JSON.stringify(arr);
+        localStorage.setItem('history', arr);
     }
 })

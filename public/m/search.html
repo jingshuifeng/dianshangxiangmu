@@ -68,13 +68,19 @@
 </body>
 <script id="historyTpl" type="text/html">
     <!-- each的是你自己包装的数组名 -->
+    {{if rows.lenght<=0}}
+    <li class="mui-table-view-cell">
+        在下是真的无能了,无法在给你更多!
+    </li>
+    {{else}}
     {{each rows value index}}
     <li class="mui-table-view-cell">
-        {{value}}
+        <a href="productlist.html?search={{value}}">{{value}}</a>
         <!-- mui-badge mui提供 右边带数字角标的样式 添加一个x图标 -->
         <span class="mui-badge fa fa-close" data-index="{{index}}"></span>
     </li>
     {{/each}}
+    {{/if}}
 </script>
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
