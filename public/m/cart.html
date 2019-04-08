@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./less/cart.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+</head>
+
+<body>
+    <!-- 主页的头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>购物车</h4>
+        </div>
+        <div class="right">
+            <a href="cart.html" class="fa fa-refresh"></a>
+        </div>
+    </header>
+    <section id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+
+            </div>
+        </div>
+        <div class="dingdan">
+            <strong>订单总额:$0.00</strong>
+            <button type="button" class="mui-btn mui-btn-danger">生成订单</button>
+        </div>
+    </section>
+    <!-- 公共的底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/cart.js"></script>
+<script id="tpl" type="text/html">
+    <ul class="mui-table-view">
+        {{each list value}}
+     <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;">
+                    <div class="mui-pull-left">
+                         <img class="mui-media-object " src="{{value.pic[0].picAddr}}">
+                         <div class="mui-input-row mui-checkbox mui-left">    
+                            <input name="checkbox" value="Item 2" type="checkbox" checked="" data-price="{{value.price}}">
+                        </div>
+                    </div>                   
+                    <div class="mui-media-body">
+                       <p class="product-name">{{value.proName}}</p>
+                       <p class="product-prce"> ${{value.price}} <del>${{value.oldPrice}}</del></p>
+                       <p class="product-num"><span>鞋码:{{value.size}}</span><span>x{{num}}双</span></p>
+                    </div>
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</script>
+
+</html>

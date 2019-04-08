@@ -147,3 +147,39 @@ body {
 #footer .mui-row > div a span {
   display: block;
 }
+#footer {
+  background-color: #ccc;
+}
+#footer .mui-row a::before {
+  font-size: 0.25rem;
+  color: #666;
+}
+#footer .mui-row button {
+  width: 95%;
+  margin: 0.06rem;
+}
+#main .mui-scroll-wrapper {
+  position: relative;
+  height: 100%;
+}
+#main .mui-scroll-wrapper #slider img {
+  width: 100%;
+}
+#main .mui-scroll-wrapper .mui-table-view .detail-name {
+  line-height: .2rem;
+}
+#main .mui-scroll-wrapper .mui-table-view .detail-price strong {
+  color: red;
+}
+#main .mui-scroll-wrapper .mui-table-view .detail-price del {
+  color: #666;
+}
+#main .mui-scroll-wrapper .mui-table-view .detail-size .product-size {
+  line-height: .34rem;
+}
+#main .mui-scroll-wrapper .mui-table-view .detail-size .product-size button {
+  margin-bottom: .05rem;
+}
+.mui-popup {
+  line-height: 1.5;
+}

@@ -1,0 +1,63 @@
+@import 'base.less';
+
+#main {
+    .dingdan{//订单样式
+        height: 0.4rem;
+        line-height: 0.4rem;
+        color: red;
+        font-size: 0.18rem;
+        background-color: #fff;
+        display: flex;
+        justify-content:space-between;
+        strong{
+            padding-left: 0.1rem;
+        }
+    }
+    .mui-scroll-wrapper{//滚动样式
+        height: 100%;
+        position: relative;
+    }
+    .mui-pull-left {
+
+        //左边图片与复选框
+        img {
+            max-width: .8rem;
+            height: .6rem;
+        }
+        // 复选框的容器
+        .mui-checkbox {
+            text-align: center;
+            margin-top: 0.1rem;
+            input[type='checkbox']{
+                position: static;
+                
+                &::before{
+                    
+                    font-size: 0.20rem;
+                }
+            }
+        }
+
+    }
+    .mui-media-body{//右边样式
+        padding-left: 0.1rem;
+        height: 98px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .product-name{
+
+        }
+        .product-prce{
+            color: red;
+            del{
+                color:#666;
+            }
+        }
+        .product-num{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+

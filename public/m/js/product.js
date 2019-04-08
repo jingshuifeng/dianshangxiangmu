@@ -119,6 +119,8 @@ $(function () {
                         console.log(obj);
                         var html = template('tpl', obj);
                         $('.product-list .mui-row').html(html);
+                        mui('#pullrefresh').pullRefresh().refresh(true);
+                        page=1;
                     }
                 })
                 mui('#pullrefresh').pullRefresh().endPulldownToRefresh();//这是阻止那个东西一直转的东东
@@ -150,5 +152,13 @@ $(function () {
                 })
             }, 1500)
         }
+    }
+    //给每一个button加点击事件跳转到详情页面
+    dianji();
+    function dianji(){
+        $('.product-list').on('tap','button',function (){
+            var id=$(this).data('id');
+            location="detail.html?id="+id;
+        })
     }
 })

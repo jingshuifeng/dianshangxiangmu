@@ -150,6 +150,10 @@ body {
 #main {
   position: relative;
 }
+#main .mui-scroll-wrapper {
+  position: relative;
+  height: 100%;
+}
 #main .mui-card-header {
   color: #aaa;
 }
@@ -191,7 +195,4 @@ body {
 }
 #main .mui-scroll form {
   height: 68px;
-}
-#main .mui-scroll .mui-pull-bottom-pocket {
-  position: absolute;
 }

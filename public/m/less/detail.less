@@ -1,0 +1,56 @@
+@import "base.less";
+#footer{
+    background-color: #ccc;
+    .mui-row{
+        a{
+            &::before{
+                font-size: 0.25rem;
+                color: #666;
+            }
+        }
+        button{
+            width: 95%;
+            margin: 0.06rem;
+        }
+    }
+}
+#main{
+    .mui-scroll-wrapper{
+        position: relative;
+        height: 100%;
+        #slider{//轮播图样式
+            img{
+                width: 100%;
+            }
+        }
+        .mui-table-view{//列表样式
+           
+            .detail-name{
+                line-height: .2rem;
+            }
+            .detail-price{
+                strong{
+                    color: red;
+                }
+                del{
+                    color:#666;
+                }
+            }
+            .detail-size{
+                .product-size{
+                    line-height: .34rem;
+                    button{
+                        margin-bottom: .05rem;
+                    }
+                }
+                
+            }
+            .detail-name{
+
+            }
+        }
+    }
+}
+.mui-popup{
+    line-height: 1.5;
+}

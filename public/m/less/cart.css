@@ -147,3 +147,50 @@ body {
 #footer .mui-row > div a span {
   display: block;
 }
+#main .dingdan {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  color: red;
+  font-size: 0.18rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+#main .dingdan strong {
+  padding-left: 0.1rem;
+}
+#main .mui-scroll-wrapper {
+  height: 100%;
+  position: relative;
+}
+#main .mui-pull-left img {
+  max-width: .8rem;
+  height: .6rem;
+}
+#main .mui-pull-left .mui-checkbox {
+  text-align: center;
+  margin-top: 0.1rem;
+}
+#main .mui-pull-left .mui-checkbox input[type='checkbox'] {
+  position: static;
+}
+#main .mui-pull-left .mui-checkbox input[type='checkbox']::before {
+  font-size: 0.20rem;
+}
+#main .mui-media-body {
+  padding-left: 0.1rem;
+  height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#main .mui-media-body .product-prce {
+  color: red;
+}
+#main .mui-media-body .product-prce del {
+  color: #666;
+}
+#main .mui-media-body .product-num {
+  display: flex;
+  justify-content: space-between;
+}
