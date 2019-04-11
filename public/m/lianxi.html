@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+</head>
+
+<body>
+   <!-- 侧滑导航根容器 -->
+<div class="mui-off-canvas-wrap mui-draggable">
+    <!-- 主页面容器 -->
+    <div class="mui-inner-wrap">
+      <!-- 主页面内容容器 -->
+      <div class="mui-content ">
+
+          <!-- 主界面具体展示内容 -->
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+          <p>2</p>
+        
+      </div>  
+      <!-- 主页面标题 -->
+      <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+        <h1 class="mui-title">标题</h1>
+      </header>
+      <!-- 菜单容器 -->
+      <aside class="mui-off-canvas-right">
+       
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+        
+      </aside>
+      
+      
+    </div>
+  </div>
+</body>
+<script src="./lib/mui/js/mui.js"></script>
+<script >
+    mui('.mui-scroll-wrapper').scroll({
+	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
+</script>
+</html>

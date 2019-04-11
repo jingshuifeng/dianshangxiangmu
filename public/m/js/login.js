@@ -10,8 +10,8 @@ $(function () {
         }
         return null;
     }
-    var url= getQueryString('returnURL');
-    console.log(url);
+    var url= getQueryString('returnUrl');
+    
     //登录
     $('.mui-btn-primary').on('tap',function (){
         var usrname=$('.mui-input-clear').val();
@@ -34,8 +34,8 @@ $(function () {
             }
         })
     })
-    //取消
+    //注册
     $('.mui-btn-danger').on('tap',function (){
-        alert(222);
+        location="register.html";
     })
 })

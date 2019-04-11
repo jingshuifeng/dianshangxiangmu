@@ -55,13 +55,13 @@ $(function () {
             return;
         }
         $.ajax({
-            url:'/cart/addCart',
+            url:'/cart/queryCart',
             type:'post',
             data:{productId:id,num:num,size:size},
             success:function (obj){
                 console.log(obj);
                 if(obj.error==400){
-                    location="login.html?returnURL="+location.href;
+                    location="login.html?returnUrl="+location.href;
                 }else{
                     mui.confirm('您真的要去购物车查看吗？','温馨提示',['确定','取消'],function (e){
                         if(e.index==0){

@@ -15,7 +15,7 @@
     <!-- 主页的头部区域 -->
     <header id="header">
         <div class="left">
-            <a href="#" class="fa fa-arrow-left"></a>
+            <a href="javascript:history.back(-1);" class="fa fa-arrow-left"></a>
         </div>
         <div class="center">
             <form action="">
@@ -26,7 +26,8 @@
             <a class="fa fa-search" aria-hidden="true"href="search.html"></a>
         </div>
     </header>
-    <section id="main">
+    <section id="main" style="position:relative;">
+        <div class="mask"style="position: absolute;left: 0;top:0;z-index: 99;height: 100%;width: 100%;background-color: #ccc;"></div>
        <div class="category-left">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
@@ -65,7 +66,7 @@
                 <a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+                <a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a>
             </div>
         </div>
     </footer>
@@ -73,6 +74,8 @@
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/category.js"></script>
 <script type="text/html"id="left-tpl">
     {{if rows.length>0 }}
     {{each rows}}
@@ -104,6 +107,18 @@ mui('.mui-scroll-wrapper').scroll({
 });
 $.ajax({
     url:'/category/queryTopCategory',
+    beforeSend: function () {
+                console.log('请求之前会调用的回调函数');
+                // 发请求之前显示遮罩层
+                $('.mask').show();
+            },
+            complete: function () {
+               console.log('请求之后会调用的回调函数');
+                // 请求完成要隐藏遮罩层
+                setTimeout(function () {
+                    $('.mask').hide();
+                }, 3000);
+            },
     success:function(obj){
         console.log(obj);
         var html=template('left-tpl',obj);

@@ -194,3 +194,14 @@ body {
   display: flex;
   justify-content: space-between;
 }
+li {
+  list-style: none;
+  vertical-align: middle;
+}
+.mui-popup-inner .product-size {
+  line-height: 0.40rem;
+}
+.mui-popup-inner .product-size span {
+  vertical-align: middle;
+  margin-right: 0.09rem;
+}

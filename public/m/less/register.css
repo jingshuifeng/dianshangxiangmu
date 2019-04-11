@@ -147,43 +147,11 @@ body {
 #footer .mui-row > div a span {
   display: block;
 }
-/* 分类的主体样式 */
-#main {
-  display: flex;
-  background-color: #ccc;
-  flex-direction: initial;
+.btn-vcode {
+  position: absolute;
+  right: 0;
+  width: 30% !important;
 }
-#main .category-left {
-  position: relative;
-  width: .8rem;
-  height: 100%;
-}
-#main .category-left ul li.active a {
-  background-color: #ccc;
-}
-#main .category-right {
-  position: relative;
-  flex: 1;
-  height: 700px;
-}
-#main .category-right a {
-  margin-top: 10px;
-  background-color: yellow;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#main .category-right a p {
-  margin-top: 10px;
-  overflow: hidden;
-}
-#main .category-right a img {
-  width: 100%;
-}
-#main .mui-scroll {
-  min-height: 100.1%;
-}
-.mui-table-view-cell:after {
-  margin-left: -50px;
+.mui-btn-danger {
+  width: 90%;
 }
